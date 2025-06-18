@@ -1,16 +1,16 @@
-a = float(input("enter the first number:"))
-b = float(input("enter the second number:"))
 import random
 option = random.choice(['+', '-', '*', '/'])
 print(option)
-if option == '+':
+try:
+ a = float(input("enter the first number:"))
+ b = float(input("enter the second number:"))
+ if option == '+':
     print("the addition",a+b)
-elif option is '-':
+ elif option is '-':
     print("the substruction",a-b)
-elif option == '*':
+ elif option == '*':
     print("the multiplication",a*b)
-elif option is '/':
-    try:
-    print("the division",a/b)
-    except Exception as {ZeroDivisionError}
-                
+ elif option is '/':
+     print("the division",a/b)
+except Exception as ZeroDivisionError: #exept zerodivisionerror:
+ print("the division error")

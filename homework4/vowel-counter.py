@@ -1,5 +1,5 @@
 vowel=0
-word = str(input("enter the word you want to calculate it's vowel:"))
+word = str(input("enter the word you want to calculate it's vowel:")).strip().lower()
 option =['i', 'o', 'e', 'u', 'a']
 for letter in word:
     print(letter)

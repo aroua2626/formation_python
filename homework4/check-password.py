@@ -1,7 +1,7 @@
-password= 2828
+password="aroua2626"
 for i in range(3):
-    p=int(input("enter the password:"))
-    if int(p)==int(password):
+    p=str(input("enter the password:"))
+    if str(p)==str(password):
         print("you're correct:")
         break
     else:

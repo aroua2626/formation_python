@@ -27,10 +27,10 @@ def search():
  mysearch=input("enter your search:")
  for task in tasks:
   if task["name"]==mysearch :
-    print(tasks)
-    return print("yes")
-  else:
-    return print("no")
+    print(task)
+    print("yes")
+    return 
+  print("no")
   
 #Delete a given task by ID or Name
 def delete():
@@ -39,12 +39,11 @@ def delete():
   if tasks:
     for task in tasks:
       if task["name"]==NAME:
-        print(tasks)
+        print(task)
         tasks.remove(task)
         print(tasks)
         return
-  else:
-    print("is empty")
+  print("is empty")
 
 
 
@@ -56,7 +55,9 @@ def update():
     if task["name"]==NAME or task["id"]==ID:
       newstatus=input("enter the new status:")
       task["status"]=newstatus
+      print(task)
     return
+  print("empty")
 
 #List all tasks
 def tasks_list():
@@ -72,7 +73,7 @@ def filter_list():
   status_filter=input("enter the status filter:")
   if tasks:
     for task in tasks:
-      if (task["tag"]==tag_filter) or (task["status"]==status_filter) or(task["tag"]==tag_filter and task["status"]==status_filter):
+      if (task["tag"]==tag_filter) or (task["status"]==status_filter):
        print(task)
 
 #Show Stats( all tasks, new tasks, completed tasks, highs tasks, low tasks).
@@ -84,18 +85,19 @@ def show():
   if tasks:
     print("length of task",len(tasks))
     for task in tasks:
-      if task["status"]=="new":
+     if task["status"]=="new":
         sum_new=sum_new+1
-        print("length of new task",sum_new)
-      elif task["status"]=="completed":
+     elif task["status"]=="completed":
           sum_completed=sum_completed+1
-          print("length of completed task",sum_completed)
-      if task["tag"]=="high":
+    if task["tag"]=="high":
           sum_high=sum_high+1
-          print("length of high task",sum_high)
-      elif task["tag"]=="low":
+    elif task["tag"]=="low":
           sum_low=sum_low+1
-          print("length of low task",sum_low)        
+          
+    print("length of new task",sum_new)
+    print("length of completed task",sum_completed) 
+    print("length of high task",sum_high)
+    print("length of low task",sum_low)  
   else:
     print("empty") 
 
@@ -120,3 +122,7 @@ while True:
     break
    else:
     print("Invalid choice. Please run the program again and select a valid choice.")
+
+ 
+ 
+  

@@ -1,0 +1,24 @@
+class BankAccount:
+     def __init__(self, owner, balance):
+          self.owner=owner
+          self.balance=balance
+
+     def Deposit(self, amount):
+          self.balance=self.balance + amount
+          print(f"{self.owner} current balance is {self.balance} DA")
+
+     def withdraw(self, amount):
+          if amount>self.balance:
+               print(f"{self.owner} you can not exit all this amount {amount}since it's bigger than {self.balance}")
+          else: 
+               self.balance=self.balance - amount    
+               print(f"{self.owner} current balance is {self.balance} DA")
+
+BankAccount1=BankAccount("Aroua",10)
+BankAccount2=BankAccount("Alaa",20)
+
+BankAccount1.Deposit(20000)
+BankAccount2.Deposit(10000)
+
+BankAccount1.withdraw(10000)
+BankAccount2.withdraw(20000)
